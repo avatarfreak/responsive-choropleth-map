@@ -1,0 +1,4 @@
+node_modules/
+src/assets/counties.json
+src/assets/education.json
+src/assets/js/bundle.js
