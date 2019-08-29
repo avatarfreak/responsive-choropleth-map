@@ -4,7 +4,7 @@
   overflow: auto; }
 
 :root {
-  --title_text: #ffebcd;
+  --title_text: #eed5b1;
   --text: #a0eade;
   --description_text: #ebd5b5;
   --svg-bg: cadetblue; }
@@ -32,20 +32,17 @@ body {
     .container .display__description {
       color: var(--description_text); }
     .container .display__svg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 5%;
       text-align: center; }
-    .container .display .county:hover {
-      fill: lime; }
+      .container .display__svg .county:hover {
+        fill: #00c3ff; }
   .container address {
+    text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    color: var(--text);
-    font-size: 0.75em;
+    color: var(--title_text);
+    font-size: 1em;
     background: #333; }
     .container address #profile-link {
       color: #f08055;
@@ -53,7 +50,10 @@ body {
       font-weight: bold; }
     @media only screen and (max-width: 414px) {
       .container address {
-        display: none; } }
+        font-size: 0.75em; } }
+    @media only screen and (max-width: 375px) {
+      .container address {
+        font-size: 0.8em; } }
   .container #tooltip {
     text-align: left;
     background: rgba(47, 79, 79, 0.938);
@@ -65,6 +65,7 @@ body {
       .container #tooltip label b {
         color: #32c5df; }
 
+/********************Preloader**********************/
 #loading {
   position: fixed;
   display: flex;
@@ -72,7 +73,6 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  background: var(--svg-bg);
   z-index: 555; }
 
 .loader {

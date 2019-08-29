@@ -4,7 +4,7 @@
   overflow: auto;
 }
 :root {
-  --title_text: #ffebcd;
+  --title_text: #eed5b1;
   --text: #a0eade;
   --description_text: #ebd5b5;
   --svg-bg: cadetblue;
@@ -15,7 +15,6 @@
   }
 }
 body {
-  //background: linear-gradient(90deg, #88bdbc, #254e18);
   background: var(--svg-bg);
 }
 
@@ -44,23 +43,20 @@ body {
     }
 
     &__svg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 5%;
       text-align: center;
-    }
-    .county:hover {
-      fill: lime;
+      .county:hover {
+        fill: rgb(0, 195, 255);
+      }
     }
   }
   address {
+    text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    color: var(--text);
-    font-size: 0.75em;
+    color: var(--title_text);
+    font-size: 1em;
     background: #333;
     #profile-link {
       color: #f08055;
@@ -68,7 +64,10 @@ body {
       font-weight: bold;
     }
     @include respond-to(414) {
-      display: none;
+      font-size: 0.75em;
+    }
+    @include respond-to(375) {
+      font-size: 0.8em;
     }
   }
 
@@ -86,6 +85,7 @@ body {
     }
   }
 }
+/********************Preloader**********************/
 #loading {
   position: fixed;
   display: flex;
@@ -93,7 +93,6 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  background: var(--svg-bg);
   z-index: 555;
 }
 .loader {

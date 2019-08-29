@@ -1,4 +1,4 @@
 node_modules/
-src/assets/counties.json
-src/assets/education.json
+src/assets/data
 src/assets/js/bundle.js
+src/assets/js/choropleths.js

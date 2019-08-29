@@ -1,13 +1,9 @@
-import {scaleQuantize, schemeOrRd} from "d3"
+export const ColorLegend = (selection, props) => {
+  const { legendData, colorScale } = props;
+  const width = 900;
+  const color = colorScale.domain([0, 66]);
 
-export const colorLegend = (props) => {
-  const {legendData, svg} =props
-  const width = 900
-  const color = scaleQuantize()
-    .range(schemeOrRd[legendData.percentage.length]);
-  color.domain([0, 66]);
-
-  const legend = svg
+  const legend = selection
     .append("g")
     .attr("id", "legend")
     .attr(
@@ -23,7 +19,6 @@ export const colorLegend = (props) => {
     .attr("height", legendData.height)
     .attr("x", (d, i) => i * legendData.width)
     .attr("fill", (d, i) => color(d));
-    
 
   legend
     .selectAll("text")
@@ -32,7 +27,7 @@ export const colorLegend = (props) => {
     .append("text")
     .attr("x", (d, i) => i * legendData.width)
     // position the labels below the rectangle elements
-    .attr("y", legendData.height *2)
+    .attr("y", legendData.height * 2)
     .style("font-size", "0.7rem")
     .style("fill", "#fcfcfc")
     .text(d => `${d}%`);
